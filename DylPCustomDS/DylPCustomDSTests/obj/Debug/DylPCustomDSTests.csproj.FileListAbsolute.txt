@@ -1,0 +1,16 @@
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\DylPCustomDSTests.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\DylPCustomDSTests.pdb
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\obj\Debug\DylPCustomDSTests.csproj.AssemblyReference.cache
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\obj\Debug\DylPCustomDSTests.csproj.CoreCompileInputs.cache
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\obj\Debug\DylPCustomDSTests.csproj.CopyComplete
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\obj\Debug\DylPCustomDSTests.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\obj\Debug\DylPCustomDSTests.pdb
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\DylPCustomDS.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDSTests\bin\Debug\DylPCustomDS.pdb

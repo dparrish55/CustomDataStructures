@@ -1,0 +1,6 @@
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\bin\Debug\DylPCustomDS.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\bin\Debug\DylPCustomDS.pdb
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\obj\Debug\DylPCustomDS.csproj.AssemblyReference.cache
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\obj\Debug\DylPCustomDS.csproj.CoreCompileInputs.cache
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\obj\Debug\DylPCustomDS.dll
+E:\CustomDataStructures\DylPCustomDS\DylPCustomDS\obj\Debug\DylPCustomDS.pdb
