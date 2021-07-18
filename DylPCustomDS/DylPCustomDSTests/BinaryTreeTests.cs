@@ -216,31 +216,8 @@ namespace DylPCustomDSTests
             subTreeRoot.left = subTreeLeft;
             subTreeRoot.right = subTreeRight;
 
-            BinaryTreeNode node0 = new BinaryTreeNode(0);
-            BinaryTreeNode node1 = new BinaryTreeNode(true); //Test that it still works with varying types in BTNode.value
-            BinaryTreeNode node2 = new BinaryTreeNode(2);
-            BinaryTreeNode node3 = new BinaryTreeNode(3);
-            BinaryTreeNode node4 = new BinaryTreeNode(4);
-            BinaryTreeNode node5 = new BinaryTreeNode("5"); //As above with an additional type
-            BinaryTreeNode node6 = new BinaryTreeNode(6);
-            BinaryTreeNode node7 = new BinaryTreeNode(7);
-
-            node0.left = node1;
-            node0.right = node2;
-
-            node1.left = node3;
-
-            node2.left = subTreeRoot;
-            node2.right = node6;
-
-            node3.left = node4;
-            node3.right = node5;
-
-            node6.left = node7;
-
-            //nodes 4, 5, and 7 have no children
-
-            BinaryTree expectedTree = new BinaryTree(node0);
+            BinaryTree expectedTree = testTree.CopyAt(testTree.root.value);
+            expectedTree.root.right.left = subTreeRoot;
 
             BinaryTree subTree = new BinaryTree(subTreeRoot);
             
@@ -258,31 +235,8 @@ namespace DylPCustomDSTests
             subTreeRoot.left = subTreeLeft;
             subTreeRoot.right = subTreeRight;
 
-            BinaryTreeNode node0 = new BinaryTreeNode(0);
-            BinaryTreeNode node1 = new BinaryTreeNode(true); //Test that it still works with varying types in BTNode.value
-            BinaryTreeNode node2 = new BinaryTreeNode(2);
-            BinaryTreeNode node3 = new BinaryTreeNode(3);
-            BinaryTreeNode node4 = new BinaryTreeNode(4);
-            BinaryTreeNode node5 = new BinaryTreeNode("5"); //As above with an additional type
-            BinaryTreeNode node6 = new BinaryTreeNode(6);
-            BinaryTreeNode node7 = new BinaryTreeNode(7);
-
-            node0.left = node1;
-            node0.right = node2;
-
-            node1.left = node3;
-            node1.right = subTreeRoot;
-
-            node2.right = node6;
-
-            node3.left = node4;
-            node3.right = node5;
-
-            node6.left = node7;
-
-            //nodes 4, 5, and 7 have no children
-
-            BinaryTree expectedTree = new BinaryTree(node0);
+            BinaryTree expectedTree = testTree.CopyAt(testTree.root.value);
+            expectedTree.root.left.right = subTreeRoot;
 
             BinaryTree subTree = new BinaryTree(subTreeRoot);
 
