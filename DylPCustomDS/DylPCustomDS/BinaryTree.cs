@@ -61,7 +61,7 @@ namespace DylPCustomDS
 
         public BinaryTree CopyAt(dynamic targetNodeValue)
         {
-            return new BinaryTree(DepthFirstSearch(targetNodeValue));
+            return new BinaryTree(DepthFirstSearch(targetNodeValue).CopyNode());
         }
 
         public void DeleteAt(dynamic targetNodeValue)
@@ -201,6 +201,27 @@ namespace DylPCustomDS
             if (currentNode.right != null) { traverseOrder.Concat(PreorderTraverseRecursor(traverseOrder, currentNode.right)); }
 
             return traverseOrder;
+        }
+
+        public bool TryAddAt(dynamic targetNodeValue, BinaryTree treeToAdd)
+        {
+            BinaryTreeNode targetNode = BreadthFirstSearch(targetNodeValue);
+            
+            if (targetNode == null) { return false; }
+            
+            else if (targetNode.left == null)
+            {
+                targetNode.left = treeToAdd.root;
+                return true;
+            }
+
+            else if (targetNode.right == null)
+            {
+                targetNode.right = treeToAdd.root;
+                return true;
+            }
+
+            else { return false; }
         }
     }
 }

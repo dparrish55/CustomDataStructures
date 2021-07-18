@@ -86,6 +86,16 @@ namespace DylPCustomDSTests
         }
 
         [TestMethod]
+        public void CopyAtRootGeneratesTreeWithIdenticalDifferentiatedNodes()
+        {
+            BinaryTree copyTree = testTree.CopyAt(testTree.root.value);
+
+            copyTree.root.left.right = new BinaryTreeNode();
+
+            Assert.IsFalse(testTree.Equals(copyTree));
+        }
+
+        [TestMethod]
         public void DeleteAtNodeResultsInSubtreeWithoutCorrespondingBranch()
         {
 
@@ -194,6 +204,102 @@ namespace DylPCustomDSTests
         {
             List<dynamic> properOrder = new List<dynamic> { 0, true, 3, 4, "5", 2, 6, 7 };
             CollectionAssert.AreEqual(properOrder, testTree.PreorderTraverse());
+        }
+
+        [TestMethod]
+        public void TryAddAtInsertsNodeAtValidLeftChildForTargetNode()
+        {
+            BinaryTreeNode subTreeRoot = new BinaryTreeNode(8);
+            BinaryTreeNode subTreeLeft = new BinaryTreeNode(9);
+            BinaryTreeNode subTreeRight = new BinaryTreeNode(10);
+
+            subTreeRoot.left = subTreeLeft;
+            subTreeRoot.right = subTreeRight;
+
+            BinaryTreeNode node0 = new BinaryTreeNode(0);
+            BinaryTreeNode node1 = new BinaryTreeNode(true); //Test that it still works with varying types in BTNode.value
+            BinaryTreeNode node2 = new BinaryTreeNode(2);
+            BinaryTreeNode node3 = new BinaryTreeNode(3);
+            BinaryTreeNode node4 = new BinaryTreeNode(4);
+            BinaryTreeNode node5 = new BinaryTreeNode("5"); //As above with an additional type
+            BinaryTreeNode node6 = new BinaryTreeNode(6);
+            BinaryTreeNode node7 = new BinaryTreeNode(7);
+
+            node0.left = node1;
+            node0.right = node2;
+
+            node1.left = node3;
+
+            node2.left = subTreeRoot;
+            node2.right = node6;
+
+            node3.left = node4;
+            node3.right = node5;
+
+            node6.left = node7;
+
+            //nodes 4, 5, and 7 have no children
+
+            BinaryTree expectedTree = new BinaryTree(node0);
+
+            BinaryTree subTree = new BinaryTree(subTreeRoot);
+            
+            Assert.IsTrue(testTree.TryAddAt(2, subTree));
+            Assert.IsTrue(expectedTree.Equals(testTree));
+        }
+
+        [TestMethod]
+        public void TryAddAtInsertsNodeAtValidRightChildForTargetNode()
+        {
+            BinaryTreeNode subTreeRoot = new BinaryTreeNode(8);
+            BinaryTreeNode subTreeLeft = new BinaryTreeNode(9);
+            BinaryTreeNode subTreeRight = new BinaryTreeNode(10);
+
+            subTreeRoot.left = subTreeLeft;
+            subTreeRoot.right = subTreeRight;
+
+            BinaryTreeNode node0 = new BinaryTreeNode(0);
+            BinaryTreeNode node1 = new BinaryTreeNode(true); //Test that it still works with varying types in BTNode.value
+            BinaryTreeNode node2 = new BinaryTreeNode(2);
+            BinaryTreeNode node3 = new BinaryTreeNode(3);
+            BinaryTreeNode node4 = new BinaryTreeNode(4);
+            BinaryTreeNode node5 = new BinaryTreeNode("5"); //As above with an additional type
+            BinaryTreeNode node6 = new BinaryTreeNode(6);
+            BinaryTreeNode node7 = new BinaryTreeNode(7);
+
+            node0.left = node1;
+            node0.right = node2;
+
+            node1.left = node3;
+            node1.right = subTreeRoot;
+
+            node2.right = node6;
+
+            node3.left = node4;
+            node3.right = node5;
+
+            node6.left = node7;
+
+            //nodes 4, 5, and 7 have no children
+
+            BinaryTree expectedTree = new BinaryTree(node0);
+
+            BinaryTree subTree = new BinaryTree(subTreeRoot);
+
+            Assert.IsTrue(testTree.TryAddAt(true, subTree));
+            Assert.IsTrue(expectedTree.Equals(testTree));
+        }
+
+        [TestMethod]
+        public void TryAddAtNodeDoesNotAllowInsertionAtNodeWithNoNullChildren()
+        {
+            Assert.IsFalse(testTree.TryAddAt(3, new BinaryTree()));
+        }
+
+        [TestMethod]
+        public void TryAddAtReturnsFalseWhenPassedValueNotInTree()
+        {
+            Assert.IsFalse(testTree.TryAddAt(1, new BinaryTree()));
         }
     }
 }

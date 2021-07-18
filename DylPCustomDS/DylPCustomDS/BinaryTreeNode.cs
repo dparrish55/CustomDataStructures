@@ -21,6 +21,22 @@ namespace DylPCustomDS
             this.value = value;
         }
 
+        public BinaryTreeNode CopyNode()
+        {
+            BinaryTreeNode copied = new BinaryTreeNode(this.value);
+            if (this.left != null)
+            {
+                copied.left = this.left.CopyNode();
+            }
+
+            if (this.right != null)
+            {
+                copied.right = this.right.CopyNode();
+            }
+
+            return copied;
+        }
+
         public void DeleteChildren()
         {
             this.left = null;
