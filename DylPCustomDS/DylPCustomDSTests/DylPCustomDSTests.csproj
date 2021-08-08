@@ -53,6 +53,7 @@
     <Compile Include="BinaryTreeNodeTests.cs" />
     <Compile Include="BinaryTreeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DynamicStackTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
