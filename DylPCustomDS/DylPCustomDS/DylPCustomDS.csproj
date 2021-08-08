@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BinaryTreeNode.cs" />
     <Compile Include="BinaryTree.cs" />
+    <Compile Include="DynamicQueue.cs" />
     <Compile Include="DynamicStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
